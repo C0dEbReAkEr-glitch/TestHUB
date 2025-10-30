@@ -1,5 +1,3 @@
-# TestHUB
-
 ## JIMS TestHub — Domain MCQ Platform
 
 TestHUB (JIMS TestHub) is a lightweight web platform for managing domain-based multiple-choice tests, created for faculty and students. It includes an admin panel to manage users and tests, a faculty interface for question/test creation, and a secure student test interface with anti-cheating measures.
