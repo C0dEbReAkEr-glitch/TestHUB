@@ -1,38 +1,55 @@
-// React import is not needed with JSX runtime; keep file minimal
-import LoginForm from './LoginForm';
-import { BookOpen } from 'lucide-react';
+import LoginForm from "./LoginForm";
+import JIMSInfo from "../jimsinfo";
 
 export default function AuthPage() {
   return (
-    <div className="min-h-screen relative flex items-center justify-center p-4">
-      {/* Background Image */}
-      <div 
-        className="fixed inset-0 z-0"
-        style={{
-          backgroundImage: 'url(/jims.jpg)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-purple-900/70 to-blue-800/80"></div>
-      </div>
+    <div className="h-screen flex flex-col lg:flex-row overflow-hidden bg-background text-textPrimary">
+      {/* Left Section - Branding & Info */}
+      <div className="flex-1 relative flex flex-col bg-primary text-white">
+        {/* Subtle overlay gradient for depth */}
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary to-secondary/40 pointer-events-none" />
 
-      {/* Content */}
-      <div className="relative z-10 w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full mb-4">
-            <BookOpen className="h-8 w-8 text-white" />
+        {/* Centered content */}
+        <div className="relative z-10 flex flex-col items-center lg:items-start justify-center text-center lg:text-left px-8 lg:px-20 flex-grow space-y-10">
+          {/* Logo + Title */}
+          <div className="flex flex-col items-center lg:items-start space-y-4">
+            <img
+              src="/jims_logo.png"
+              alt="JIMS Logo"
+              className="w-80 h-24 object-contain bg-white rounded-xl p-3 shadow-soft"
+            />
+            <div>
+              <h1 className="text-4xl font-bold tracking-tight">JIMS TestHub</h1>
+              <p className="text-white/90 text-sm">
+                Jagan Institute of Management Studies
+              </p>
+            </div>
           </div>
-          <h1 className="text-4xl font-bold text-white mb-2">JIMS TestHub</h1>
-          <p className="text-blue-100">Jagan Institute of Management Studies</p>
-          <p className="text-blue-200 text-sm">Rohini Sector-5</p>
+
+          {/* Decorative Accent */}
+          <div className="hidden lg:block">
+            <div className="w-24 h-1 bg-gradient-to-r from-white/80 to-secondary rounded-full" />
+          </div>
         </div>
 
-        {/* Login Form */}
-        <div className="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-2xl">
+        {/* Info section pinned near bottom for layout balance */}
+        <div className="relative z-10 px-8 lg:px-20 pb-12">
+          <JIMSInfo />
+        </div>
+      </div>
+
+      {/* Right Section - Login */}
+      <div className="flex-1 flex flex-col justify-center items-center px-8 lg:px-20 py-12 bg-surface relative">
+        {/* Soft inset shadow to separate panels */}
+        <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.04)] pointer-events-none" />
+
+        <div className="relative z-10 w-full max-w-sm bg-formBackground backdrop-blur-xl rounded-2xl border border-borderPrimary shadow-medium p-8">
           <LoginForm />
+        </div>
+
+        {/* Mobile Info Below Form */}
+        <div className="relative z-10 lg:hidden mt-10 text-center text-textSecondary">
+          <JIMSInfo />
         </div>
       </div>
     </div>
