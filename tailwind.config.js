@@ -13,7 +13,7 @@ export default {
         // ⚪ Neutrals & Backgrounds
         background: "#FAFAF9",     // Soft off-white background
         surface: "#FFFFFF",        // Cards / containers
-        muted: "#F4F4F5",          // Light gray for input backgrounds, dividers
+        muted: "#e4e4F5",          // Light gray for input backgrounds, dividers
 
         // 🖋 Text Colors
         textPrimary: "#1C1917",    // Deep warm gray for headings

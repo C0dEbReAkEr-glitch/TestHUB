@@ -3,7 +3,7 @@ import JIMSInfo from "../jimsinfo";
 
 export default function AuthPage() {
   return (
-    <div className="h-screen flex flex-col lg:flex-row overflow-hidden bg-background text-textPrimary">
+    <div className="h-screen flex flex-col lg:flex-row lg:overflow-hidden bg-background text-textPrimary">
       {/* Left Section - Branding & Info */}
       <div className="flex-1 relative flex flex-col bg-primary text-white">
         {/* Subtle overlay gradient for depth */}
@@ -33,13 +33,13 @@ export default function AuthPage() {
         </div>
 
         {/* Info section pinned near bottom for layout balance */}
-        <div className="relative z-10 px-8 lg:px-20 pb-12">
+        <div className="hidden lg:block relative z-10 px-8 lg:px-20 pb-12">
           <JIMSInfo />
         </div>
       </div>
 
       {/* Right Section - Login */}
-      <div className="flex-1 flex flex-col justify-center items-center px-8 lg:px-20 py-12 bg-surface relative">
+      <div className="flex-1 flex flex-col justify-center items-center px-8 lg:px-20 py-4 bg-surface relative">
         {/* Soft inset shadow to separate panels */}
         <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.04)] pointer-events-none" />
 
@@ -48,7 +48,7 @@ export default function AuthPage() {
         </div>
 
         {/* Mobile Info Below Form */}
-        <div className="relative z-10 lg:hidden mt-10 text-center text-textSecondary">
+        <div className="bg-primary lg:hidden relative z-10 mt-8 w-screen p-8">
           <JIMSInfo />
         </div>
       </div>
