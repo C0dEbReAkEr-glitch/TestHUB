@@ -5,8 +5,6 @@ const bcrypt = require('bcryptjs');
 const connectDB = async () => {
   try {
     await mongoose.connect('mongodb://localhost:27017/mcq_platform', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
     });
     console.log('MongoDB connected successfully');
     await createDefaultAdmin();
